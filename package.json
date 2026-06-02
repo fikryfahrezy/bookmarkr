@@ -1,0 +1,36 @@
+{
+  "name": "bookmarkr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "node -e \"const { execSync } = require('node:child_process'); if (process.env.NODE_ENV !== 'production' && process.env.CI !== 'true') execSync('husky .husky', { stdio: 'inherit', shell: true });\"",
+    "ts:check": "pnpm -r run ts:check"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@rsbuild/core": "2.0.7",
+    "@rsbuild/plugin-vue": "1.2.8",
+    "@rslint/core": "0.5.1",
+    "@rstest/adapter-rsbuild": "0.10.2",
+    "@rstest/core": "0.10.2",
+    "@tailwindcss/postcss": "4.3.0",
+    "@testing-library/dom": "10.4.1",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/vue": "8.1.0",
+    "happy-dom": "20.9.0",
+    "husky": "9.1.7",
+    "lint-staged": "17.0.7",
+    "prettier": "3.8.3",
+    "prettier-plugin-tailwindcss": "0.8.0",
+    "tailwindcss": "4.3.0",
+    "typescript": "6.0.3"
+  },
+  "packageManager": "pnpm@10.28.0",
+  "engines": {
+    "node": ">=24.13.0",
+    "pnpm": ">=10.28.0"
+  }
+}

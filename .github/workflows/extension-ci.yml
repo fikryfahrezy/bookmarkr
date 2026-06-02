@@ -1,0 +1,53 @@
+name: Extension CI
+
+on:
+  push:
+    paths:
+      - 'apps/extension/**'
+      - 'packages/**'
+    branches:
+      - main
+  pull_request:
+    paths:
+      - 'apps/extension/**'
+      - 'packages/**'
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - uses: pnpm/action-setup@v6
+        name: Install pnpm
+        with:
+          cache: true
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint 
+        run: pnpm --filter "./packages/**" --filter "./apps/extension" run lint
+
+  test:
+    needs: lint
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - uses: pnpm/action-setup@v6
+        name: Install pnpm
+        with:
+          cache: true
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Test 
+        run: pnpm --filter "./packages/**" --filter "./apps/extension" run test

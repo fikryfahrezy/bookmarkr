@@ -1,0 +1,19 @@
+{
+  "name": "extension",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "rsbuild build",
+    "dev": "rsbuild --open",
+    "format": "prettier --write .",
+    "lint": "rslint",
+    "preview": "rsbuild preview",
+    "test": "rstest",
+    "test:watch": "rstest --watch",
+    "ts:check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "vue": "3.5.34"
+  }
+}

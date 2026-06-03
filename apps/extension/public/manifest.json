@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Bookmarkr",
+  "version": "1.0.0",
+  "description": "Save and manage bookmarks",
+  "permissions": ["storage", "tabs", "bookmarks"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "favicon.png"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  }
+}
